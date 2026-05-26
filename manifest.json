@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Resumo IA - Digisac & WhatsApp",
+  "version": "1.0.0",
+  "description": "Extensão para capturar conversas de Digisac e WhatsApp Web, enviar para Gemini e gerar resumos estruturados.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "identity"
+  ],
+  "host_permissions": [
+    "https://web.digisac.com.br/*",
+    "https://web.whatsapp.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "action": {
+    "default_popup": "dist/src/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.digisac.com.br/*",
+        "https://web.whatsapp.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
