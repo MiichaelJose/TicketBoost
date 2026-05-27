@@ -55,7 +55,7 @@ export default function GeminiApp() {
 
         setConnection({ 
           status: 'error', 
-          message: `Erro Google: ${errorMsg}` 
+          message: `Erro no Google OAuth. Use a API Key por enquanto.` 
         });
         return;
       }
@@ -185,8 +185,8 @@ export default function GeminiApp() {
               <div>
                 <div className="flex items-center gap-2">
                   <span className="font-semibold">Entrar com Google</span>
-                  <div className="px-2 py-0.5 text-[10px] font-medium rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    Recomendado
+                  <div className="px-2 py-0.5 text-[10px] font-medium rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    Experimental
                   </div>
                 </div>
                 <p className="text-sm text-white/60 mt-0.5">Autenticação rápida e segura</p>
