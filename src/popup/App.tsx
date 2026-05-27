@@ -125,11 +125,9 @@ export default function GeminiApp() {
       {/* Header */}
       <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-white/10">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center">
-            <Zap className="w-4 h-4" />
-          </div>
+          <img src="/icons/logo.svg" alt="TicketBoost" className="w-9 h-9" />
           <div>
-            <div className="font-semibold tracking-tight">Resumo IA</div>
+            <div className="font-semibold tracking-tight">TicketBoost</div>
             <div className="text-[10px] text-white/50 -mt-0.5">Gemini</div>
           </div>
         </div>
