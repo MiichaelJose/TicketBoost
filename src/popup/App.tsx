@@ -35,22 +35,29 @@ export default function GeminiApp() {
 
     chrome.identity.getAuthToken({ interactive: true }, (token) => {
       if (chrome.runtime.lastError) {
-        const errorMsg = chrome.runtime.lastError.message || 'Erro desconhecido'
+        const error = chrome.runtime.lastError;
+        const errorMsg = error.message || 'Erro desconhecido';
         
-        // Armazena log detalhado
+        console.error('%c[Google OAuth Error]', 'color: #f87171; font-weight: bold', {
+          message: errorMsg,
+          errorObject: error,
+          timestamp: new Date().toISOString()
+        });
+
         chrome.storage.local.set({
           lastAuthError: {
             type: 'google',
             message: errorMsg,
+            fullError: error,
             timestamp: new Date().toISOString()
           }
-        })
+        });
 
         setConnection({ 
           status: 'error', 
           message: `Erro Google: ${errorMsg}` 
-        })
-        return
+        });
+        return;
       }
 
       if (!token) {
