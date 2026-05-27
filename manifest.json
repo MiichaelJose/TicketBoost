@@ -6,16 +6,8 @@
   "permissions": [
     "storage",
     "activeTab",
-    "scripting",
-    "identity"
+    "scripting"
   ],
-  "oauth2": {
-    "client_id": "106790201094-263rrqga5v27dim6r12ifl31cb46dm5c.apps.googleusercontent.com",
-    "scopes": [
-      "https://www.googleapis.com/auth/userinfo.email",
-      "https://www.googleapis.com/auth/userinfo.profile"
-    ]
-  },
   "host_permissions": [
     "https://web.digisac.com.br/*",
     "https://web.whatsapp.com/*",
@@ -43,5 +35,8 @@
       "js": ["content.js"],
       "run_at": "document_idle"
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
